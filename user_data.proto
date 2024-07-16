@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package lingua;
+
+option go_package = "genprotos/";
+
+import "lingua-protos/void.proto";
+//import "void.proto";
+
+
+service UserDataService {
+  rpc GetUserData(ByID) returns (UserDataGRes) {};
+  rpc UpdateXP(XPUReq) returns (Void) {};
+  rpc UpdateDailyStreak(StreakUReq) returns (Void) {};
+  rpc UpdatePlayedGamesCount(PlayedGamesCountUReq) returns (Void) {};
+  rpc UpdateWinningPercentage(WinningPercentageUReq) returns (Void) {};
+};
+
+message UserDataGRes {
+  string level = 1;
+  string native_lang = 2;
+  int64 xp = 3;
+  int32 daily_streak = 4;
+  int64 played_games_count = 5;
+  float winning_percentage = 6;
+};
+
+message XPUReq {
+  string user_id = 1;
+  int64 xp = 2;
+};
+
+message StreakUReq{
+  string user_id = 1;
+  int64 daily_streak = 2;
+};
+
+message PlayedGamesCountUReq {
+  string user_id = 1;
+  int64 played_games_count = 2;
+};
+
+message WinningPercentageUReq {
+  string user_id = 1;
+  float percentage = 2;
+};
