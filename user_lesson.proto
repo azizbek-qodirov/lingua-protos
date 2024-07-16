@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package lingua;
+
+option go_package = "genprotos/";
+
+// import "lingua-protos/void.proto";
+import "void.proto";
+
+
+service UserLessonService {
+    rpc Create(UserLessonCReq) returns (Void) {};
+};
+
+message UserLessonCReq {
+    string id = 1;
+    string user_id = 2;
+    string lesson_id = 3;
+};
