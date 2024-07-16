@@ -24,7 +24,7 @@ message LessonCReqGRes {
   string lang_1 = 5;
   string lang_2 = 6;
   string level = 7;
-  string order = 8;
+  int32 order = 8;
 };
 
 message LessonCReqForSwagger {

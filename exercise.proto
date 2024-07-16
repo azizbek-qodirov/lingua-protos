@@ -40,6 +40,6 @@ message ExerciseGAReq {
 };
 
 message ExerciseGARes {
-  repeated ExerciseGAReq exercises = 1;
+  repeated ExerciseGResUReq exercises = 1;
   int64 count = 2;
 };
