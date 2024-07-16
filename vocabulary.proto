@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package lingua;
+
+option go_package = "genprotos/";
+
+import "lingua-protos/void.proto";
+import "lingua-protos/exercise.proto";
+// import "void.proto";
+// import "exercise.proto";
+
+
+service VocabularyService {
+  rpc AddToVocabulary(ByID) returns (Void) {};
+  rpc DeleteFromVocabulary(ByID) returns (Void) {};
+  rpc GetVocabularies(VocabulariesGAReq) returns (VocabulariesGARes) {};
+};
+
+message VocabulariesGAReq {
+  string lesson_id = 1;
+  string type = 2;
+  Pagination pagination = 3;
+};
+
+message VocabulariesGARes {
+    repeated ExerciseGResUReq vocabularies = 1;
+};

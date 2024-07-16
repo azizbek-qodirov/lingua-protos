@@ -5,9 +5,9 @@ package lingua;
 option go_package = "genprotos/";
 
 import "lingua-protos/void.proto";
-import "lingua-protos/void.proto";
-//import "user_data.proto";
-//import "void.proto";
+import "lingua-protos/user_data.proto";
+// import "user_data.proto";
+// import "void.proto";
 
 
 service UserService {

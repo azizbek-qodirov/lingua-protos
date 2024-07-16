@@ -5,7 +5,8 @@ package lingua;
 option go_package = "genprotos/";
 
 import "lingua-protos/void.proto";
-//import "void.proto";
+// import "void.proto";
+
 
 service LessonService {
   rpc CreateLesson(LessonCReqGRes) returns (Void) {};
@@ -18,31 +19,40 @@ service LessonService {
 message LessonCReqGRes {
   string id = 1;
   string name = 2;
-  string description = 3;
-  string lang_1 = 4;
-  string lang_2 = 5;
-  string level = 6;
+  string title = 3;
+  string content = 4;
+  string lang_1 = 5;
+  string lang_2 = 6;
+  string level = 7;
+  string order = 8;
 };
 
 message LessonCReqForSwagger {
   string name = 1;
-  string description = 2;
-  string lang_1 = 3;
-  string lang_2 = 4;
-  string level = 5;
+  string title = 2;
+  string content = 3;
+  string lang_1 = 4;
+  string lang_2 = 5;
+  string level = 6;
+  string order = 7;
 };
 
 message LessonUReq {
   string id = 1;
   string name = 2;
-  string description = 3;
-  string level = 4;
+  string title = 3;
+  string content = 4;
+  string level = 5;
+  string order = 6;
 };
 
 message LessonGAReq {
   string name = 1;
-  string level = 2;
-  Pagination pagination = 3;
+  string lang_1 = 2;
+  string lang_2 = 3;
+  string level = 4;
+  string order = 5;
+  Pagination pagination = 6;
 };
 
 message LessonGARes {

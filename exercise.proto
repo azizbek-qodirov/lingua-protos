@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package lingua;
+
+option go_package = "genprotos/";
+
+import "lingua-protos/void.proto";
+// import "void.proto";
+
+
+service ExerciseService {
+  rpc CreateExercise(ExerciseCReqUReqForSwagger) returns (Void) {};
+  rpc GetExerciseByID(ByID) returns (ExerciseGResUReq) {};
+  rpc UpdateExercise(ExerciseGResUReq) returns (Void) {};
+  rpc DeleteExercise(ByID) returns (Void) {};
+  rpc GetAllExercises(ExerciseGAReq) returns (ExerciseGARes) {};
+};
+
+message ExerciseCReqUReqForSwagger {
+  string lesson_id = 1;
+  string type = 2;
+  string question = 3;
+  string options = 4;
+  string correct_answer = 5;
+};
+
+message ExerciseGResUReq {
+  string id = 1;
+  string lesson_id = 2;
+  string type = 3;
+  string question = 4;
+  string options = 5;
+  string correct_answer = 6;
+};
+
+message ExerciseGAReq {
+  string lesson_id = 1;
+  string type = 2;
+  Pagination pagination = 3;
+};
+
+message ExerciseGARes {
+  repeated ExerciseGAReq exercises = 1;
+  int64 count = 2;
+};
