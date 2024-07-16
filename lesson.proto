@@ -51,7 +51,7 @@ message LessonGAReq {
   string lang_1 = 2;
   string lang_2 = 3;
   string level = 4;
-  string order = 5;
+  int32 order = 5;
   Pagination pagination = 6;
 };
 
