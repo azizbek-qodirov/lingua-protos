@@ -34,7 +34,7 @@ message LessonCReqForSwagger {
   string lang_1 = 4;
   string lang_2 = 5;
   string level = 6;
-  string order = 7;
+  int32 order = 7;
 };
 
 message LessonUReq {
@@ -43,7 +43,7 @@ message LessonUReq {
   string title = 3;
   string content = 4;
   string level = 5;
-  string order = 6;
+  int32 order = 6;
 };
 
 message LessonGAReq {
