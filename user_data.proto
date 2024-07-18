@@ -4,15 +4,15 @@ package lingua;
 
 option go_package = "genprotos/";
 
-import "lingua-protos/void.proto";
-// import "void.proto";
-
+// import "lingua-protos/void.proto";
+import "void.proto";
 
 service UserDataService {
   rpc GetUserData(ByID) returns (UserDataGRes) {};
   rpc UpdateXP(XPUReq) returns (Void) {};
   rpc UpdateDailyStreak(StreakUReq) returns (Void) {};
   rpc UpdateWinningPercentage(WinningPercentageUReq) returns (Void) {};
+  rpc GetLeadBoard(Void) returns (LeadboardRes) {};
 };
 
 message UserDataGRes {
@@ -37,4 +37,8 @@ message StreakUReq{
 message WinningPercentageUReq {
   string user_id = 1;
   float percentage = 2;
+};
+
+message LeadboardRes {
+  repeated UserDataGRes users = 1;
 };
