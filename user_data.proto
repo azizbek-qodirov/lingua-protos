@@ -50,5 +50,5 @@ message LeadboardUserRes {
   int32 daily_streak = 4;
   int64 played_games_count = 5;
   float winning_percentage = 6;
-  float user_id = 7;
+  string user_id = 7;
 };
