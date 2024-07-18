@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package lingua;
+
+option go_package = "genprotos/";
+
+// import "lingua-protos/void.proto";
+// import "void.proto";
+
+
+service QuizService {
+  rpc StartTest(TestCheckReq) returns (TestResultRes) {};
+};
+
+message TestCheckReq {
+    repeated CheckReq requests = 1;
+};
+
+message CheckReq {
+    string index = 1;
+    string correct_answer = 2;
+};
+
+message TestResultRes {
+    string tests_count = 1;
+    string correct_answers_count = 2;
+    string xp_given = 3;
+    string feedback = 4;
+};
