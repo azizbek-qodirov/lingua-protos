@@ -29,8 +29,8 @@ message CheckReq {
 };
 
 message TestResultRes {
-    string tests_count = 1;
-    string correct_answers_count = 2;
-    string xp_given = 3;
+    int32 tests_count = 1;
+    int32 correct_answers_count = 2;
+    int32 xp_given = 3;
     string feedback = 4;
 };

@@ -12,7 +12,6 @@ service UserDataService {
   rpc GetUserData(ByID) returns (UserDataGRes) {};
   rpc UpdateXP(XPUReq) returns (Void) {};
   rpc UpdateDailyStreak(StreakUReq) returns (Void) {};
-  rpc UpdatePlayedGamesCount(PlayedGamesCountUReq) returns (Void) {};
   rpc UpdateWinningPercentage(WinningPercentageUReq) returns (Void) {};
 };
 
@@ -33,10 +32,6 @@ message XPUReq {
 message StreakUReq{
   string user_id = 1;
   int64 daily_streak = 2;
-};
-
-message PlayedGamesCountUReq {
-  string user_id = 1;
 };
 
 message WinningPercentageUReq {
