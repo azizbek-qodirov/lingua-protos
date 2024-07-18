@@ -13,7 +13,8 @@ service QuizService {
 };
 
 message TestCheckReq {
-    repeated CheckReq requests = 1;
+    string lesson_id = 1;
+    repeated CheckReq requests = 2;
 };
 
 message CheckReq {
