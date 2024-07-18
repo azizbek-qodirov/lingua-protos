@@ -17,7 +17,7 @@ message TestCheckReq {
 };
 
 message CheckReq {
-    string index = 1;
+    string exercise_id = 1;
     string correct_answer = 2;
 };
 
