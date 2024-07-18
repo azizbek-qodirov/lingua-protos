@@ -37,7 +37,6 @@ message StreakUReq{
 
 message PlayedGamesCountUReq {
   string user_id = 1;
-  int64 played_games_count = 2;
 };
 
 message WinningPercentageUReq {
